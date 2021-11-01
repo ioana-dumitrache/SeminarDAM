@@ -64,4 +64,9 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "correct", Toast.LENGTH_LONG).show();
 
     }
+
+    public void metodaInregistrare(View view) {
+        Intent intent3 = new Intent(MainActivity.this, MainActivity3.class);
+        startActivity(intent3);
     }
+}
