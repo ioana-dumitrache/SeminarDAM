@@ -1,11 +1,19 @@
 package com.example.myapplication_fitify;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "Exercitii")
 public class Exercitii {
+    @ColumnInfo(name = "denumire")
     private String denumire;
-    private float durata;
+    @PrimaryKey(autoGenerate = true)
+    private Integer durata;
+    @ColumnInfo(name = "descriere")
     private String descriere;
 
-    public Exercitii(String denumire, float durata, String descriere) {
+    public Exercitii(String denumire,Integer durata, String descriere) {
         this.denumire = denumire;
         this.durata = durata;
         this.descriere = descriere;
@@ -19,11 +27,11 @@ public class Exercitii {
         this.denumire = denumire;
     }
 
-    public float getDurata() {
+    public Integer getDurata() {
         return durata;
     }
 
-    public void setDurata(float durata) {
+    public void setDurata(Integer durata) {
         this.durata = durata;
     }
 

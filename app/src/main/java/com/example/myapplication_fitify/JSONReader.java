@@ -55,9 +55,9 @@ public class JSONReader {
             {
                 JSONObject currentObject=jsonArray.getJSONObject(i);
                 String denumire=currentObject.getString("denumire");
-                int durata=currentObject.getInt("durata");
+                float durata=currentObject.getInt("durata");
                 String descriere=currentObject.getString("descriere");
-                Exercitii exercitii=new Exercitii(denumire, durata, descriere);
+                Exercitii exercitii=new Exercitii(denumire, (int) durata, descriere);
                 lista.add(exercitii);
             }
         } catch (JSONException e) {
