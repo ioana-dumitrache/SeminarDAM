@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1093976605265",
+    "firebase_url": "https://temaandroid-db1ff-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "temaandroid-db1ff",
+    "storage_bucket": "temaandroid-db1ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093976605265:android:938b1b8e521126445b2e70",
+        "android_client_info": {
+          "package_name": "com.example.myapplication_fitify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093976605265-h76uh86na7eqctqfbe8eficrr5sm8em0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLyqKaIi1-Add6V-E_YM_VqvYyiZM1Gzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093976605265-h76uh86na7eqctqfbe8eficrr5sm8em0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
