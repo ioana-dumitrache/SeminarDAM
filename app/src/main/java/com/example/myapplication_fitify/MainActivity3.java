@@ -3,6 +3,7 @@ package com.example.myapplication_fitify;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,6 +23,7 @@ public class MainActivity3 extends AppCompatActivity {
     private Button button;
     private Adaptor adaptor;
     private ExercitiiDAO dao;
+    private Button clase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,15 @@ public class MainActivity3 extends AppCompatActivity {
 
         listView = findViewById(R.id.listView);
         button = findViewById(R.id.buttonListView);
+        clase=findViewById(R.id.buttonListView2);
+        clase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(MainActivity3.this, MainActivity4.class);
+                startActivity(intent4);
+                finish();
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
 
