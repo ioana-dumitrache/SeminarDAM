@@ -28,12 +28,14 @@ public class JSONReader {
                 result.append(line);
 
             }
+
+            List<Exercitii> list=parsare(result.toString());
+            response.onSuccess(list);
+
             reader.close();
             inputReader.close();
             input.close();
 
-            List<Exercitii> list=parsare(result.toString());
-            response.onSuccess(list);
 
 
         } catch (MalformedURLException e) {
@@ -50,7 +52,7 @@ public class JSONReader {
         List<Exercitii> lista=new ArrayList<>();
         try {
             JSONObject jsonObject=new JSONObject(jsonString);
-            JSONArray jsonArray=jsonObject.getJSONArray("exercitii");
+            JSONArray jsonArray=jsonObject.getJSONArray("Exercitii");
             for(int i=0;i<jsonArray.length();i++)
             {
                 JSONObject currentObject=jsonArray.getJSONObject(i);

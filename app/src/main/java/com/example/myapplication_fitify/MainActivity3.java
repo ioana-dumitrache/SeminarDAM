@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.JsonReader;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,23 +21,33 @@ public class MainActivity3 extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView listView;
-    private Button button;
+    private Button button, button2;
     private Adaptor adaptor;
     private ExercitiiDAO dao;
     private Button clase;
+    private JSONReader json;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
         listView = findViewById(R.id.listView);
-        button = findViewById(R.id.buttonListView);
-        clase=findViewById(R.id.buttonListView2);
+        button = findViewById(R.id.buttonAdauga);
+        button2 = findViewById(R.id.buttonExPropuse);
+        clase=findViewById(R.id.buttonVeziClase);
         clase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent4 = new Intent(MainActivity3.this, MainActivity4.class);
                 startActivity(intent4);
+                finish();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(MainActivity3.this, MainActivity5.class);
+                startActivity(intent5);
                 finish();
             }
         });
@@ -49,45 +60,12 @@ public class MainActivity3 extends AppCompatActivity {
             }
         });
         items = new ArrayList<>();
-        //itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
-        //listView.setAdapter(itemsAdapter);
-        //setUpAdapter();
-        adaptor = new Adaptor(getLista());
-        listView.setAdapter(adaptor);
+        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
+        listView.setAdapter(itemsAdapter);
+        setUpAdapter();
 
-        JSONReader reader = new JSONReader();
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                reader.read("https://jsonkeeper.com/b/YZRO", new IResponse() {
-
-                    @Override
-                    public void onSuccess(List<Exercitii> exercitii) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                adaptor.updateList(exercitii);
-                            }
-                        });
-                    }
-
-                    @Override
-                    public void onError(String mesaj) {
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(MainActivity3.this, mesaj, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-                    }
-                });
-            }
-        });
-        thread.start();
-
-        Exercitii ex3=new Exercitii("Triceps",12,"Se folosesc scripetii");
-        Exercitii ex4=new Exercitii("Biceps", 15, "Se folosesc scripetii");
+       // Exercitii ex3=new Exercitii("Triceps",12,"Se folosesc scripetii");
+        //Exercitii ex4=new Exercitii("Biceps", 15, "Se folosesc scripetii");
 
 //        dao.insertAll(ex3,ex4);
 
@@ -120,7 +98,7 @@ public class MainActivity3 extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Completeaza", Toast.LENGTH_LONG).show();
         }
     }
-    private List<Exercitii> getLista() {
+  /*  private List<Exercitii> getLista() {
         ArrayList<Exercitii> lista = new ArrayList<>();
         Exercitii ex1 = new Exercitii("Triceps", 10, "Se folosesc ganterele.");
         Exercitii ex2 = new Exercitii("Piept", 15, "Se foloseste bara olimpica. ");
@@ -129,5 +107,5 @@ public class MainActivity3 extends AppCompatActivity {
         lista.add(ex2);
 
         return lista;
-    }
+    }*/
 }

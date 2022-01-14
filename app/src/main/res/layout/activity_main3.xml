@@ -1,78 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3"
-    android:orientation="horizontal">
-
-    <EditText
-        android:id="@+id/editTextListView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonListView"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/buttonListView"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonAdauga"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Adauga"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextListView" />
+        android:text="ADAUGA EXERCITIU EFECTUAT">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="409dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toTopOf="@+id/buttonListView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-<ScrollView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints">
-    <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="664dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    </Button>
+    <Button
+        android:id="@+id/buttonExPropuse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VEZI EXERCITII PROPUSE">
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+    </Button>
 
-        <Button
-            android:id="@+id/buttonListView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Vezi clase"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/editTextListView" />
-    </LinearLayout>
-</ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/buttonVeziClase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VEZI CLASE">
+
+    </Button>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextListView">
+
+    </EditText>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+</LinearLayout>
